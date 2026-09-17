@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/app_background">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        app:title="گزارش کامل رویدادها"
+        app:titleTextColor="@color/on_primary"
+        app:navigationIcon="?attr/homeAsUpIndicator" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="لاگِ فنیِ همه‌ی رویدادها (شروع/توقفِ سرویس‌ها، کلیک‌ها، خطاها، کرش‌ها). این فایل روی دیسک ذخیره می‌شه، پس حتی بعد از ریست‌شدنِ گوشی هم باقی می‌مونه."
+            android:textSize="13sp"
+            android:textColor="@color/app_on_surface_variant"
+            android:layout_marginBottom="12dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="12dp">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnRefreshLog"
+                style="@style/Widget.AutoClickerPro.Button.Outlined"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginEnd="6dp"
+                android:text="🔄 بروزرسانی" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnShareLog"
+                style="@style/Widget.AutoClickerPro.Button.Outlined"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="6dp"
+                android:layout_marginEnd="6dp"
+                android:text="📤 اشتراک‌گذاری" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnClearEventLog"
+                style="@style/Widget.AutoClickerPro.Button.Outlined"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="6dp"
+                android:text="🗑 پاک کردن" />
+
+        </LinearLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="#1A000000"
+            android:padding="8dp">
+
+            <TextView
+                android:id="@+id/tvEventLog"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="monospace"
+                android:textIsSelectable="true"
+                android:textSize="11sp"
+                android:textColor="@color/app_on_surface_variant" />
+
+        </ScrollView>
+
+    </LinearLayout>
+</LinearLayout>
